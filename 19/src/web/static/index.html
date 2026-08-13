@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>合同审查 ChatPanel</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #eee; }
+    .app { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; height: 100vh; padding: 16px; }
+    chat-panel { height: 100%; }
+    artifact-sandbox { height: 100%; background: #fff; }
+    @media (max-width: 960px) {
+      .app { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <chat-panel api-base=""></chat-panel>
+    <artifact-sandbox id="sandbox"></artifact-sandbox>
+  </div>
+  <script src="./chat-panel.js"></script>
+  <script src="./artifact-sandbox.js"></script>
+  <script>
+    document.addEventListener("artifact-ready", (e) => {
+      const sandbox = document.getElementById("sandbox");
+      sandbox.loadUrl("/reports/" + e.detail.reportPath);
+    });
+  </script>
+</body>
+</html>

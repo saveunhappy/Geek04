@@ -1,0 +1,40 @@
+{
+  "name": "contract-review-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/runtime/minimal.ts",
+    "start:explicit": "tsx src/runtime/explicit-model.ts",
+    "start:custom": "tsx src/runtime/custom-openai-compatible.ts",
+    "start:tools": "tsx src/runtime/with-tools.ts",
+    "start:skill": "tsx src/runtime/skill-chunked-review.ts",
+    "start:secured": "tsx src/runtime/secured-review.ts",
+    "start:web": "tsx src/web/server.ts",
+    "test:web": "tsx scripts/test-web.ts",
+    "start:tui": "tsx src/runtime/tui-review.ts",
+    "test:tui": "tsx scripts/test-tui.ts"
+  },
+  "dependencies": {
+    "@earendil-works/pi-agent-core": "^0.81.1",
+    "@earendil-works/pi-ai": "^0.81.1",
+    "@earendil-works/pi-coding-agent": "^0.81.1",
+    "@earendil-works/pi-tui": "^0.83.0",
+    "docx": "^9.7.1",
+    "dotenv": "^16.4.5",
+    "mammoth": "^1.12.0",
+    "pdf-parse": "^1.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "tsx": "^4.22.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
